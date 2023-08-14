@@ -5,6 +5,7 @@ import Auth from "./pages/Auth/Auth";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import MovieDetails from "./pages/MovieDetails/MovieDetails";
 import Admin from "./pages/Admin/Admin";
+import MovieTheatres from "./pages/MovieTheatres/MovieTheatres";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           element={<MovieDetails />}
         />
         <Route exact path="/admin" element={<Admin />} />
+        <Route exact path="/buyTickets/:movieId" element={<MovieTheatres />} />
+        
       </Routes>
     </Router>
   );

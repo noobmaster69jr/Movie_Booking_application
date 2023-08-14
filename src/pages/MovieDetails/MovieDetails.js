@@ -1,7 +1,7 @@
 import { CSpinner } from "@coreui/react";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
-import { useParams } from "react-router-dom";
+import {Link, useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import { getMovieById } from "../../api/movie.api";
 import { Button } from "react-bootstrap";
@@ -24,7 +24,7 @@ function MovieDetails() {
   return (
     <>
       <Navbar />
-      
+
       <div className="bg-light">
         {!movieDetails ? (
           <CSpinner color="primary" variant="grow" />
@@ -84,8 +84,8 @@ function MovieDetails() {
 
                   <div className="my-3">
                     <Button className="text-white" variant="danger">
-                      Book Tickets{" "}
-                    </Button>{" "}
+                      <Link to={`/buyTickets/${movieId}`}>Book Tickets</Link>
+                    </Button>
                   </div>
                 </div>
               </div>
