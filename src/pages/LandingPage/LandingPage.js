@@ -6,12 +6,27 @@ import { CSpinner } from "@coreui/react";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import MovieList from "../../components/MovieList/MovieList";
 
+let allMovieData = [];
+
 function LandingPage() {
   const [moviesData, setMoviesData] = useState(null);
+
+  const filterMovies = (searchValue) => {
+    console.log(allMovieData);
+
+    const filteredMovies = allMovieData.filter((movie) => {
+      const movieName = movie.name.toLowerCase();
+      console.log(movieName);
+      return movieName.startsWith(searchValue.toLowerCase());
+    });
+
+    setMoviesData(filteredMovies);
+  };
 
   const fetchMovies = async () => {
     try {
       const movies = await getAllMovies();
+      allMovieData = movies.data;
       setMoviesData(movies.data);
     } catch (e) {
       console.log(e);
@@ -27,7 +42,7 @@ function LandingPage() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar filterMovies={filterMovies} />
       <Carousel />
 
       <div className="text-center">
