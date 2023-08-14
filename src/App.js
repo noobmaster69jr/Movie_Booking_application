@@ -2,19 +2,15 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Auth from "./pages/Auth/Auth";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
-function Some(){
-  return <>
-  <div> Hello world</div>
-  </>
-}
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/login" element={<Auth />} />
         <Route exact path="/register" />
-        <Route exact path="/" element={<Some/>}/>
+        <Route exact path="/" element={<LandingPage />} />
       </Routes>
     </Router>
   );

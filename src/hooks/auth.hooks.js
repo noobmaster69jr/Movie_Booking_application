@@ -21,7 +21,7 @@ export const useAuth = () => {
     } else if (userType === userTypes.CLIENT) {
       navigate("/client");
     } else {
-      navigate("/customer");
+      navigate("/");
     }
   };
 
@@ -29,10 +29,12 @@ export const useAuth = () => {
     redirect();
   }, []);
 
-  const onLogin = async (values, { setSubmitting }) => {
+  const onLogin = async (values, props) => {
     const userDetails = { userId: values.userId, password: values.password };
     const loginResponse = await signIn(userDetails);
-    setSubmitting(false);
+    console.log(loginResponse);
+    props.setSubmitting(false);
+    props.setErrors({ result: "Invalid password" });
     redirect();
   };
 
