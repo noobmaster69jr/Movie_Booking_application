@@ -9,7 +9,7 @@ export const signIn = async (user) => {
       user
     );
 
-    const { name, email, userId, userTypes, status, accessToken } =
+    const { name, email, userId, userTypes, status, accessToken, _id } =
       response.data;
 
     if (accessToken) {
@@ -18,6 +18,7 @@ export const signIn = async (user) => {
       localStorage.setItem("email", email);
       localStorage.setItem("userTypes", userTypes);
       localStorage.setItem("token", accessToken);
+      localStorage.setItem("id", _id);
     }
 
     return response.data;

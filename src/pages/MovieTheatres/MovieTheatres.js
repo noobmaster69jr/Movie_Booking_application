@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getTheatresForAMovie } from "../../api/theatres.api";
 import { Spinner } from "react-bootstrap";
 import { getMovieById } from "../../api/movie.api";
+import TheatreDetails from "../../components/TheatreDetails/TheatreDetails";
+
 
 const MovieTheatres = () => {
   const { movieId: selectedMovie } = useParams();
@@ -18,13 +20,19 @@ const MovieTheatres = () => {
 
   const getMovieDetails = async () => {
     const movieDetails = await getMovieById(selectedMovie);
+    console.log(movieDetails);
     setMovieDetails(movieDetails.data);
+    
   };
 
+
+    const init = async () => {
+      await Promise.all([getTheatres(), getMovieDetails()]);
+      setIsLoading(false);
+    };
+
   useEffect(() => {
-    getTheatres();
-    getMovieDetails();
-    setIsLoading(false);
+    init();
   }, []);
 
   return (
@@ -34,10 +42,10 @@ const MovieTheatres = () => {
       {isLoading && <Spinner />}
 
       {!isLoading && (
-        <div className="bg-black">
+        <div className="bg-black text-center py-4">
           <h2 className="fw-bolder text-white"> {movieDetails.name} </h2>
 
-          <div>
+          <div className="text-white">
             <span> {movieDetails.description} </span>
 
             <div className="text-white">
@@ -60,9 +68,16 @@ const MovieTheatres = () => {
               {" "}
               Released On {movieDetails.releaseDate}
             </h6>
-
             <br />
           </div>
+
+          <div style={{ width: "70vw", margin: "0 auto" }} className="bg-white">
+            <TheatreDetails
+              theatresDetail={theatresDetail}
+              selectedMovie={selectedMovie}
+            />
+          </div>
+          
         </div>
       )}
       <div></div>
