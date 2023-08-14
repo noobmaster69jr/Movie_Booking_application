@@ -6,7 +6,6 @@ import { getAllBookings } from "../../api/bookings.api";
 import { getAllUsers } from "../../api/users.api";
 import CardList from "../../components/CardList/CardList";
 import { keys } from "../../utils/constants";
-import { Cell, Column, HeaderCell, Table } from "rsuite-table";
 import TheatresTable from "../../components/Tables/TheatresTable/TheatresTable";
 import MoviesTable from "../../components/Tables/MoviesTable/MoviesTable";
 import BookingsTable from "../../components/Tables/Bookings/Bookings";
@@ -123,7 +122,12 @@ function Admin() {
         </WidgetContext.Provider>
 
         <div>
-          {showTheatresTable && <TheatresTable theatresList={theatresList} />}
+          {showTheatresTable && (
+            <TheatresTable
+              theatresList={theatresList}
+              setTheatersList={setTheatersList}
+            />
+          )}
           {showMoviesTable && <MoviesTable moviesList={moviesList} />}
           {showBookingsTable && <BookingsTable bookingsList={bookingsList} />}
           {showUsersTable && <UsersTable usersList={usersList} />}
