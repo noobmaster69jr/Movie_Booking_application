@@ -23,7 +23,7 @@ export const signIn = async (user) => {
 
     return response.data;
   } catch (err) {
-    console.log(err);
+  
     return err;
   }
 };
@@ -37,11 +37,9 @@ export const register = async (user) => {
       user
     );
 
-    console.log(response);
-
     return response;
   } catch (err) {
-    console.log(err);
+    
     return err;
   }
 };
