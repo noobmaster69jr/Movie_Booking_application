@@ -2,9 +2,7 @@ import {
   Cell,
   Column,
   HeaderCell,
-  Table,
-  rowData,
-  dataKey,
+  Table
 } from "rsuite-table";
 import "./TheatresTable.css";
 import { Button } from "react-bootstrap";

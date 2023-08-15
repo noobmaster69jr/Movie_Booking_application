@@ -2,7 +2,7 @@ import { Cell, Column, HeaderCell, Table } from "rsuite-table";
 
 const ImageCell = ({ rowData, dataKey, ...rest }) => (
   <Cell {...rest}>
-    <img src={rowData[dataKey]} width="70" />
+    <img src={rowData[dataKey]} width="70" alt="movie poster"/>
   </Cell>
 );
 

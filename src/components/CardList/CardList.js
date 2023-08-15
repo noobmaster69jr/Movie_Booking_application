@@ -1,4 +1,3 @@
-import { CWidgetStatsC } from "@coreui/react";
 import CWidget from "../CWidget/CWidget";
 import { keys } from "../../utils/constants";
 

@@ -3,8 +3,6 @@ import {
   Column,
   HeaderCell,
   Table,
-  rowData,
-  dataKey,
 } from "rsuite-table";
 
 const UsersTable = ({ usersList }) => {

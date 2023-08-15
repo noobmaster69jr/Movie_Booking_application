@@ -12,11 +12,11 @@ import BookingsTable from "../../components/Tables/Bookings/Bookings";
 import UsersTable from "../../components/Tables/Users/Users";
 
 
-const dataList = [
-  { id: 1, name: "a", email: "a@email.com", avartar: "..." },
-  { id: 2, name: "b", email: "b@email.com", avartar: "..." },
-  { id: 3, name: "c", email: "c@email.com", avartar: "..." },
-];
+// const dataList = [
+//   { id: 1, name: "a", email: "a@email.com", avartar: "..." },
+//   { id: 2, name: "b", email: "b@email.com", avartar: "..." },
+//   { id: 3, name: "c", email: "c@email.com", avartar: "..." },
+// ];
 
 
 
@@ -85,6 +85,7 @@ function Admin() {
 
   useEffect(() => {
     init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
    const onWidgetClick = (id) => {

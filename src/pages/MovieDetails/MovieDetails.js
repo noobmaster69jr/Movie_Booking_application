@@ -17,6 +17,7 @@ function MovieDetails() {
 
   useEffect(() => {
     fetchMovieDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log(movieId);
@@ -41,7 +42,7 @@ function MovieDetails() {
 
             <div style={{ padding: "40px" }} className="row my-4 py-10">
               <div className="col-lg-3 col-md-12">
-                <img src={movieDetails.posterUrl} width={300} height={500} />
+                <img src={movieDetails.posterUrl} width={300} height={500} alt="movie poster"/>
               </div>
 
               <br />

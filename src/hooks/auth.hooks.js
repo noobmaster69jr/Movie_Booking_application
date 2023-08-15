@@ -31,6 +31,7 @@ export const useLogin = () => {
   };
   useEffect(() => {
     redirect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onLogin = async (values, props) => {
@@ -71,6 +72,7 @@ export const useRegister = () => {
 
   useEffect(() => {
     redirect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onRegister = async (values, props) => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ function Payments({
   closeModel,
 }) {
   const handleClose = closeModel;
-  const handleShow = () => setShow(true);
+
 
   return (
     <>
@@ -56,7 +56,7 @@ function Payments({
             <div>
               {bookingDetails.status === "SUCCESS" ? (
                 <div className="d-flex flex-column justify-content-between align-items-center">
-                  <img src={movieDetails.posterUrl} height={100} width={100} />
+                  <img src={movieDetails.posterUrl} height={100} width={100} alt="movie poster" />
 
                   <h5> Booking Confirmed !</h5>
                   <small> Booking Id : </small>
@@ -67,7 +67,7 @@ function Payments({
                 </div>
               ) : (
                 <div className="d-flex flex-column justify-content-between align-items-center">
-                  <img src={movieDetails.posterUrl} height={100} width={100} />
+                  <img src={movieDetails.posterUrl} height={100} width={100} alt="movie poster"/>
 
                   <h5> Booking Failed !</h5>
                   <small>Please Retry </small>

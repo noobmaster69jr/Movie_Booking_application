@@ -9,7 +9,7 @@ export const signIn = async (user) => {
       user
     );
 
-    const { name, email, userId, userTypes, status, accessToken, _id } =
+    const { name, email, userId, userTypes, accessToken, _id } =
       response.data;
 
     if (accessToken) {

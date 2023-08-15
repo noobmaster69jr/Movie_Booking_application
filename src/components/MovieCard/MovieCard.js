@@ -3,7 +3,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { Link } from "react-router-dom";
 
 function MovieCard({ movie }) {
-  const { name, description, posterUrl, language, casts, director, _id } =
+  const { name, posterUrl, language, casts, director, _id } =
     movie;
 
   console.log(posterUrl);

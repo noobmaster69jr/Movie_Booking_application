@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useState } from "react";
 
 const seats = Array.from({ length: 8 * 8 }, (_, i) => i);
 
